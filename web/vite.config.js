@@ -52,8 +52,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        // target: 'http://localhost:3000',
-        target: 'https://api.dcm.ink',
+        target: 'http://localhost:3000',
+        // target: 'https://api.dcm.ink',
         changeOrigin: true,
       },
     },

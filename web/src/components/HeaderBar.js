@@ -329,12 +329,9 @@ const HeaderBar = () => {
                     }
                   }}
                 >
-                  <Button theme='borderless' type='tertiary'>
+                  <Nav.Item style={{ 'background-color': 'transparent' }}>
                     {theme === 'dark' ? <IconSun size='large' style={{ color: '#808080' }} /> : <IconMoon size='large' style={{ color: '#808080' }} />}
-                  </Button>
-                  {/* <Nav.Item style={{ 'background-color': 'transparent' }}>
-                    {theme === 'dark' ? <IconSun size='large' style={{ color: '#808080' }} /> : <IconMoon size='large' style={{ color: '#808080' }} />}
-                  </Nav.Item> */}
+                  </Nav.Item>
                 </span>
 
                 {userState.user ? (

@@ -52,9 +52,9 @@ function LayoutWithConditionalSider() {
             }} >
               <App />
             </Content>
-            <Footer>
+            {/* <Footer> */}
               <FooterBar />
-            </Footer>
+            {/* </Footer> */}
           </Layout>
         </Layout>
       </Layout >
