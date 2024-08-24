@@ -9,21 +9,7 @@ import {
   IconInfoCircle,
   IconMoon,
   IconSun,
-  IconSendStroked,
-  IconCalendarClock,
-  IconChecklistStroked,
-  IconComment,
-  IconCreditCard,
-  IconGift,
-  IconHistogram,
-  IconHome,
-  IconKey,
-  IconLayers,
-  IconPriceTag,
-  IconSetting,
   IconUser,
-  IconHelpCircle,
-  IconAt
 } from '@douyinfe/semi-icons';
 
 import {
@@ -43,7 +29,6 @@ import {
   IconSlider,
   IconConfig,
   IconFaq,
-  IconNavigation
 } from '@douyinfe/semi-icons-lab';
 
 import { Layout, Nav, Avatar, Dropdown, Button, Switch, Tag } from '@douyinfe/semi-ui';
@@ -314,10 +299,6 @@ const HeaderBar = () => {
                 text: '模型价格',
                 itemKey: 'pricing',
               },
-              // {
-              //   text: '帮助中心',
-              //   itemKey: 'about'
-              // }
             ] : []}
             onSelect={(key) => {
               setSelectedKeys([key.itemKey]);
@@ -348,23 +329,18 @@ const HeaderBar = () => {
                     }
                   }}
                 >
-                  <Nav.Item style={{ 'background-color': 'transparent' }}>
+                  <Button theme='borderless' type='tertiary'>
                     {theme === 'dark' ? <IconSun size='large' style={{ color: '#808080' }} /> : <IconMoon size='large' style={{ color: '#808080' }} />}
-                  </Nav.Item>
+                  </Button>
+                  {/* <Nav.Item style={{ 'background-color': 'transparent' }}>
+                    {theme === 'dark' ? <IconSun size='large' style={{ color: '#808080' }} /> : <IconMoon size='large' style={{ color: '#808080' }} />}
+                  </Nav.Item> */}
                 </span>
 
                 {userState.user ? (
                   <>
                     {!location.pathname.startsWith('/console') ? (
-                      // <Nav.Item
-                      //   text={'控制台'}
-                      //   itemKey={'console'}
-                      //   icon={<IconToken />}
-                      //   style={{ 'background-color': 'transparent' }}
-
-                  <Button theme='outline' type='tertiary' icon={<IconToken />} onClick={() => redirectTo('/console')}>控制台</Button>
-                      // />
-                      // <img src={<IconToken size='extra-large' />} alt='console' style={{ marginRight: '0.75em', width: '36px', height: '36px' }} onClick={() => redirectTo('/console')} />
+                      <Button theme='outline' type='tertiary' icon={<IconToken />} onClick={() => redirectTo('/console')}>控制台</Button>
                     ) : (
                       <Dropdown
                         position='bottomRight'

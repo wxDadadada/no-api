@@ -13,44 +13,22 @@ import {
 } from '../helpers';
 import '../index.css';
 
-// import {
-//   IconCalendarClock, IconChecklistStroked,
-//   IconComment,
-//   IconCreditCard,
-//   IconGift,
-//   IconHistogram,
-//   IconHome,
-//   IconImage,
-//   IconKey,
-//   IconLayers,
-//   IconPriceTag,
-//   IconSetting,
-//   IconUser,
-// } from '@douyinfe/semi-icons';
-
 import {
   IconProgress,
-  IconToken,
-  IconIntro,
   IconTree,
   IconOverflow,
   IconTag,
   IconCard,
   IconToast,
-  IconBanner,
   IconAvatar,
   IconChangelog,
   IconPopover,
   IconImage,
   IconSlider,
-  IconConfig,
-  IconFaq,
 } from '@douyinfe/semi-icons-lab';
 
 import { Layout, Nav } from '@douyinfe/semi-ui';
 import { setStatusData } from '../helpers/data.js';
-
-// HeaderBar Buttons
 
 const SiderBar = () => {
   const [userState, userDispatch] = useContext(UserContext);
@@ -241,7 +219,6 @@ const SiderBar = () => {
               setSelectedKeys([key.itemKey]);
             }}
           >
-            {/* <Nav.Footer collapseButton={true}></Nav.Footer> */}
           </Nav>
         </div>
       </Layout>

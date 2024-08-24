@@ -52,9 +52,7 @@ function LayoutWithConditionalSider() {
             }} >
               <App />
             </Content>
-            <Footer style={{
-              bottom: 0
-            }}>
+            <Footer>
               <FooterBar />
             </Footer>
           </Layout>
