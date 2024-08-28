@@ -199,7 +199,7 @@ const OtherSetting = () => {
           <Banner fullMode={false} type="success" bordered icon={null} closeIcon={null}
             title={
               <div style={{ fontWeight: 600, fontSize: '14px', lineHeight: '20px' }}>
-                NO-API 当前版本号：V1.5&nbsp;&nbsp;
+                NO-API 当前版本号：V1.6&nbsp;&nbsp;
                 <Text link={{ href: 'https://docs.qq.com/doc/p/af2a94ff20cd066dc642d20179a04006c9cba162' }}>
                   检查更新
                 </Text>
