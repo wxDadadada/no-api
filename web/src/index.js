@@ -12,6 +12,7 @@ import { StatusProvider } from './context/Status';
 import { Layout } from '@douyinfe/semi-ui';
 import SiderBar from './components/SiderBar';
 import { ThemeProvider } from './context/Theme';
+import FooterBar from './components/Footer';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { isMobile } from './helpers';
 

@@ -37,7 +37,52 @@ import '../index.css';
 
 import fireworks from 'react-fireworks';
 
+import {
+  IconHelpCircle,
+  IconHome,
+  IconHomeStroked,
+  IconKey,
+  IconNoteMoneyStroked,
+  IconPriceTag,
+  IconUser
+} from '@douyinfe/semi-icons';
+import { Avatar, Dropdown, Layout, Nav, Switch } from '@douyinfe/semi-ui';
+import { stringToColor } from '../helpers/render';
+import Text from '@douyinfe/semi-ui/lib/es/typography/text';
+
 // HeaderBar Buttons
+let headerButtons = [
+  {
+    text: '关于',
+    itemKey: 'about',
+    to: '/about',
+    icon: <IconHelpCircle />,
+  },
+];
+
+let buttons = [
+  {
+    text: '首页',
+    itemKey: 'home',
+    to: '/',
+    icon: <IconHomeStroked />,
+  },
+  // {
+  //   text: '模型价格',
+  //   itemKey: 'pricing',
+  //   to: '/pricing',
+  //   icon: <IconNoteMoneyStroked />,
+  // },
+];
+
+if (localStorage.getItem('chat_link')) {
+  headerButtons.splice(1, 0, {
+    name: '聊天',
+    to: '/chat',
+    icon: 'comments',
+  });
+}
+
 const HeaderBar = () => {
   const [userState, userDispatch] = useContext(UserContext);
   const [statusState, statusDispatch] = useContext(StatusContext);

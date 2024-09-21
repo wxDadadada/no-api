@@ -41,6 +41,8 @@ const SiderBar = () => {
   const systemName = getSystemName();
   const logo = getLogo();
   const [isCollapsed, setIsCollapsed] = useState(defaultIsCollapsed);
+  const theme = useTheme();
+  const setTheme = useSetTheme();
 
   const routerMap = {
     console: '/console',
