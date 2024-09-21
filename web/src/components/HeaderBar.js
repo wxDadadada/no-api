@@ -10,6 +10,8 @@ import {
   IconMoon,
   IconSun,
   IconUser,
+  IconHelpCircle,
+  IconHomeStroked,
 } from '@douyinfe/semi-icons';
 
 import {
@@ -36,18 +38,6 @@ import { stringToColor } from '../helpers/render';
 import '../index.css';
 
 import fireworks from 'react-fireworks';
-
-import {
-  IconHelpCircle,
-  IconHome,
-  IconHomeStroked,
-  IconKey,
-  IconNoteMoneyStroked,
-  IconPriceTag,
-  IconUser
-} from '@douyinfe/semi-icons';
-import { Avatar, Dropdown, Layout, Nav, Switch } from '@douyinfe/semi-ui';
-import { stringToColor } from '../helpers/render';
 import Text from '@douyinfe/semi-ui/lib/es/typography/text';
 
 // HeaderBar Buttons
@@ -374,7 +364,7 @@ const HeaderBar = () => {
                     }
                   }}
                 >
-                  <Nav.Item style={{ 'background-color': 'transparent' }}>
+                  <Nav.Item style={{ backgroundColor: 'transparent' }}>
                     {theme === 'dark' ? <IconSun size='large' style={{ color: '#808080' }} /> : <IconMoon size='large' style={{ color: '#808080' }} />}
                   </Nav.Item>
                 </span>

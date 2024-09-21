@@ -331,16 +331,16 @@ const Detail = (props) => {
   return (
     <>
       <Layout>
-        {/* <Layout.Header>
+        <Layout.Header>
           <h3>数据看板</h3>
-        </Layout.Header> */}
+        </Layout.Header>
         <Layout.Content>
-          <Form layout='horizontal' labelPosition='inset'>
+          <Form ref={formRef} layout='horizontal' style={{ marginTop: 10 }}>
             <>
               <Form.DatePicker
                 field='start_timestamp'
                 label='起始时间'
-                style={{ width: '250px', marginBottom: '10px' }}
+                style={{ width: 272 }}
                 initValue={start_timestamp}
                 value={start_timestamp}
                 type='dateTime'
@@ -353,7 +353,7 @@ const Detail = (props) => {
                 field='end_timestamp'
                 fluid
                 label='结束时间'
-                style={{ width: '250px', marginBottom: '10px' }}
+                style={{ width: 272 }}
                 initValue={end_timestamp}
                 value={end_timestamp}
                 type='dateTime'
@@ -363,7 +363,7 @@ const Detail = (props) => {
               <Form.Select
                 field='data_export_default_time'
                 label='时间粒度'
-                style={{ width: '250px', marginBottom: '10px' }}
+                style={{ width: 176 }}
                 initValue={dataExportDefaultTime}
                 placeholder={'时间粒度'}
                 name='data_export_default_time'
@@ -381,7 +381,7 @@ const Detail = (props) => {
                   <Form.Input
                     field='username'
                     label='用户名称'
-                    style={{ width: '250px', marginBottom: '10px' }}
+                    style={{ width: 176 }}
                     value={username}
                     placeholder={'可选值'}
                     name='username'
@@ -389,17 +389,18 @@ const Detail = (props) => {
                   />
                 </>
               )}
-              <Button
-                label='查询'
-                style={{ marginBottom: '10px' }}
-                type='primary'
-                htmlType='submit'
-                className='btn-margin-right'
-                onClick={refresh}
-                loading={loading}
-              >
-                查询
-              </Button>
+              <Form.Section>
+                <Button
+                  label='查询'
+                  type='primary'
+                  htmlType='submit'
+                  className='btn-margin-right'
+                  onClick={refresh}
+                  loading={loading}
+                >
+                  查询
+                </Button>
+              </Form.Section>
             </>
           </Form>
           <Spin spinning={loading}>

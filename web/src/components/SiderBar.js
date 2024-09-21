@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState, useTheme } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/User';
 import { StatusContext } from '../context/Status';
@@ -41,8 +41,8 @@ const SiderBar = () => {
   const systemName = getSystemName();
   const logo = getLogo();
   const [isCollapsed, setIsCollapsed] = useState(defaultIsCollapsed);
-  const theme = useTheme();
-  const setTheme = useSetTheme();
+  // const theme = useTheme();
+  // const setTheme = useSetTheme();
 
   const routerMap = {
     console: '/console',

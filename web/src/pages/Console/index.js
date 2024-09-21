@@ -1,38 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { API, showError } from '../../helpers';
-import { marked } from 'marked';
-import { Steps, Layout, Empty, Card, Typography } from '@douyinfe/semi-ui';
+import React from 'react';
+import { Layout, Empty, Card } from '@douyinfe/semi-ui';
 import { IllustrationSuccess, IllustrationSuccessDark } from '@douyinfe/semi-illustrations';
-import SiderBar from '../../components/SiderBar';
-const { Sider } = Layout;
 
 const About = () => {
-  const [about, setAbout] = useState('');
-  const [aboutLoaded, setAboutLoaded] = useState(false);
-
-  const displayAbout = async () => {
-    setAbout(localStorage.getItem('about') || '');
-    const res = await API.get('/api/about');
-    const { success, message, data } = res.data;
-    if (success) {
-      let aboutContent = data;
-      if (!data.startsWith('https://')) {
-        aboutContent = marked.parse(data);
-      }
-      setAbout(aboutContent);
-      localStorage.setItem('about', aboutContent);
-    } else {
-      showError(message);
-      setAbout('加载关于内容失败...');
-    }
-    setAboutLoaded(true);
-  };
-
-  useEffect(() => {
-    displayAbout().then();
-  }, []);
-
-  const { Text } = Typography;
 
   return (
     <>

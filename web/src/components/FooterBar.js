@@ -18,33 +18,33 @@ const Footer = () => {
   const defaultFooter = (
     <div style={{
       display: 'flex',
-      'word-wrap': 'break-word',
-      'align-items': 'center',
+      wordWrap: 'break-word',
+      alignItems: 'center',
       padding: 20,
       height: 60,
       color: 'var(--semi-color-text-2)',
-      'background-color': 'rgba(var(--semi-grey-0), 1)',
-      'justify-content': !isMobile() ? 'space-between' : 'center',
-      'flex-direction': !isMobile() ? 'row' : 'column',
+      backgroundColor: 'rgba(var(--semi-grey-0), 1)',
+      justifyContent: !isMobile() ? 'space-between' : 'center',
+      flexDirection: !isMobile() ? 'row' : 'column',
     }}>
       <span>
         <span>Copyright © 2024&nbsp;
-          <a href='https://docs.qq.com/doc/p/af2a94ff20cd066dc642d20179a04006c9cba162' style={{ 'text-align': 'center', 'text-decoration': 'none', color: 'inherit', marginRight: '10px' }}
+          <a href='https://docs.qq.com/doc/p/af2a94ff20cd066dc642d20179a04006c9cba162' style={{ textAlign: 'center', textDecoration: 'none', color: 'inherit', marginRight: '10px' }}
             target='_blank'
             rel='noreferrer'
           >
             No API
           </a>All Rights Reserved.</span>
       </span>
-      <div style={{ 'text-align': 'center' }}>
-        <a href='https://github.com/Calcium-Ion/new-api' style={{ 'text-align': 'center', 'text-decoration': 'none', color: 'inherit', marginRight: '10px' }}
+      <div style={{ textAlign: 'center' }}>
+        <a href='https://github.com/Calcium-Ion/new-api' style={{ textAlign: 'center', textDecoration: 'none', color: 'inherit', marginRight: '10px' }}
           target='_blank'
           rel='noreferrer'
         >
           New API
         </a>
         <a
-          href='https://github.com/songquanpeng/one-api' style={{ 'text-align': 'center', 'text-decoration': 'none', color: 'inherit' }}
+          href='https://github.com/songquanpeng/one-api' style={{ textAlign: 'center', textDecoration: 'none', color: 'inherit' }}
           target='_blank'
           rel='noreferrer'
         >

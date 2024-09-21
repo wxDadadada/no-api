@@ -137,9 +137,6 @@ export default function GeneralSettings(props) {
                 <Form.Switch
                   field={'DisplayInCurrencyEnabled'}
                   label={'以货币形式显示额度'}
-                  size='large'
-                  checkedText='｜'
-                  uncheckedText='〇'
                   onChange={(value) => {
                     setInputs({
                       ...inputs,
@@ -152,28 +149,10 @@ export default function GeneralSettings(props) {
                 <Form.Switch
                   field={'DisplayTokenStatEnabled'}
                   label={'Billing 相关 API 显示令牌额度而非用户额度'}
-                  size='large'
-                  checkedText='｜'
-                  uncheckedText='〇'
                   onChange={(value) =>
                     setInputs({
                       ...inputs,
                       DisplayTokenStatEnabled: value,
-                    })
-                  }
-                />
-              </Col>
-              <Col span={8}>
-                <Form.Switch
-                  field={'DefaultCollapseSidebar'}
-                  label={'默认折叠侧边栏'}
-                  size='large'
-                  checkedText='｜'
-                  uncheckedText='〇'
-                  onChange={(value) =>
-                    setInputs({
-                      ...inputs,
-                      DefaultCollapseSidebar: value,
                     })
                   }
                 />

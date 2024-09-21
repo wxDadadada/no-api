@@ -241,13 +241,15 @@ const TopUp = () => {
               <div style={{ marginTop: 20 }}>
                 <Divider>在线充值</Divider>
                 <Form>
-                  {/* <Form.Input
+                  <Form.Input
                     disabled={!enableOnlineTopUp}
                     field={'redemptionCount'}
-                    label={'实付金额：' + renderAmount()}
+                    // label={'实付金额：' + renderAmount()}
+                    suffix={'实付金额：' + renderAmount()}
                     placeholder={
                       '充值数量，最低 ' + renderQuotaWithAmount(minTopUp)
                     }
+                    style={{ width: '100%' }}
                     name='redemptionCount'
                     type={'select'}
                     value={topUpCount}
@@ -258,8 +260,8 @@ const TopUp = () => {
                       setTopUpCount(value);
                       await getAmount(value);
                     }}
-                  /> */}
-                  <Form.Select
+                  />
+                  {/* <Form.Select
                     disabled={!enableOnlineTopUp}
                     // field={'redemptionCount'}
                     suffix={'实付金额：' + renderAmount()}
@@ -283,7 +285,7 @@ const TopUp = () => {
                       setTopUpCount(value);
                       await getAmount(value);
                     }}
-                  />
+                  /> */}
                   <Space>
                     <Button
                       type={'primary'}
@@ -309,23 +311,14 @@ const TopUp = () => {
                   </Space>
                 </Form>
               </div>
-              {/* <div style={{ display: 'flex', justifyContent: 'right' }}>
-                <Text>
-                  <Link onClick={
-                    async () => {
-                      window.location.href = '/topup/history'
-                    }
-                  }>充值记录</Link>
-                </Text>
-              </div> */}
               <div style={{ marginTop: 20 }}>
                 <Divider>兑换余额</Divider>
                 <Form>
                   <Form.Input
-                    // field={'redemptionCode'}
-                    // label={'兑换码'}
+                    field={'redemptionCode'}
+                    label={'兑换码'}
                     placeholder='兑换码'
-                    // name='redemptionCode'
+                    name='redemptionCode'
                     value={redemptionCode}
                     onChange={(value) => {
                       setRedemptionCode(value);
@@ -352,6 +345,15 @@ const TopUp = () => {
                   </Space>
                 </Form>
               </div>
+              {/* <div style={{ display: 'flex', justifyContent: 'right' }}>
+                <Text>
+                  <Link onClick={
+                    async () => {
+                      window.location.href = '/topup/history'
+                    }
+                  }>充值记录</Link>
+                </Text>
+              </div> */}
             </Card>
           </div>
         </Layout.Content>

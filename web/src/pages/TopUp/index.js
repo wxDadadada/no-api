@@ -239,6 +239,79 @@ const TopUp = () => {
                 余额 {renderQuota(userQuota)}
               </Title>
               <div style={{ marginTop: 20 }}>
+                <Divider>在线充值</Divider>
+                <Form>
+                  <Form.Input
+                    disabled={!enableOnlineTopUp}
+                    field={'redemptionCount'}
+                    // label={'实付金额：' + renderAmount()}
+                    suffix={'实付金额：' + renderAmount()}
+                    placeholder={
+                      '充值数量，最低 ' + renderQuotaWithAmount(minTopUp)
+                    }
+                    style={{ width: '100%' }}
+                    name='redemptionCount'
+                    type={'select'}
+                    value={topUpCount}
+                    onChange={async (value) => {
+                      if (value < 1) {
+                        value = 1;
+                      }
+                      setTopUpCount(value);
+                      await getAmount(value);
+                    }}
+                  />
+                  {/* <Form.Select
+                    disabled={!enableOnlineTopUp}
+                    // field={'redemptionCount'}
+                    suffix={'实付金额：' + renderAmount()}
+                    // label={'实付金额：' + renderAmount()}
+                    placeholder="请选择充值额度"
+                    style={{ width: '100%' }}
+                    optionList={[
+                      { value: 10, label: '10刀额度', otherKey: 0 },
+                      { value: 50, label: '50刀额度', otherKey: 1 },
+                      { value: 100, label: '100刀额度', otherKey: 2 },
+                      { value: 500, label: '500刀额度', otherKey: 3 },
+                      { value: 1000, label: '1000刀额度', otherKey: 4 }
+                    ]}
+                    name='redemptionCount'
+                    type={'number'}
+                    value={topUpCount}
+                    onChange={async (value) => {
+                      if (value < 1) {
+                        value = 1;
+                      }
+                      setTopUpCount(value);
+                      await getAmount(value);
+                    }}
+                  /> */}
+                  <Space>
+                    <Button
+                      type={'primary'}
+                      theme={'solid'}
+                      onClick={async () => {
+                        preTopUp('zfb');
+                      }}
+                    >
+                      支付宝
+                    </Button>
+                    <Button
+                      style={{
+                        backgroundColor: 'rgba(var(--semi-green-5), 1)',
+                      }}
+                      type={'primary'}
+                      theme={'solid'}
+                      onClick={async () => {
+                        preTopUp('wx');
+                      }}
+                    >
+                      微信
+                    </Button>
+                  </Space>
+                </Form>
+              </div>
+              <div style={{ marginTop: 20 }}>
                 <Divider>兑换余额</Divider>
                 <Form>
                   <Form.Input
@@ -268,74 +341,6 @@ const TopUp = () => {
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? '兑换中...' : '兑换'}
-                    </Button>
-                  </Space>
-                </Form>
-              </div>
-              <div style={{ marginTop: 20 }}>
-                <Divider>在线充值</Divider>
-                <Form>
-                  {/* <Form.Input
-                    disabled={!enableOnlineTopUp}
-                    field={'redemptionCount'}
-                    label={'实付金额：' + renderAmount()}
-                    placeholder={
-                      '充值数量，最低 ' + renderQuotaWithAmount(minTopUp)
-                    }
-                    name='redemptionCount'
-                    type={'select'}
-                    value={topUpCount}
-                    onChange={async (value) => {
-                      if (value < 1) {
-                        value = 1;
-                      }
-                      setTopUpCount(value);
-                      await getAmount(value);
-                    }}
-                  /> */}
-                  <Form.Select
-                    disabled={!enableOnlineTopUp}
-                    field={'redemptionCount'}
-                    label={'实付金额：' + renderAmount()}
-                    placeholder="请选择充值额度" style={{ width: 180 }} optionList={[
-                      { value: 10, label: '10刀额度', otherKey: 0 },
-                      { value: 50, label: '50刀额度', otherKey: 1 },
-                      { value: 100, label: '100刀额度', otherKey: 2 },
-                      { value: 500, label: '500刀额度', otherKey: 3 },
-                      { value: 1000, label: '1000刀额度', otherKey: 4 }
-                    ]}
-                    name='redemptionCount'
-                    type={'number'}
-                    value={topUpCount}
-                    onChange={async (value) => {
-                      if (value < 1) {
-                        value = 1;
-                      }
-                      setTopUpCount(value);
-                      await getAmount(value);
-                    }}
-                  />
-                  <Space>
-                    <Button
-                      type={'primary'}
-                      theme={'solid'}
-                      onClick={async () => {
-                        preTopUp('zfb');
-                      }}
-                    >
-                      支付宝
-                    </Button>
-                    <Button
-                      style={{
-                        backgroundColor: 'rgba(var(--semi-green-5), 1)',
-                      }}
-                      type={'primary'}
-                      theme={'solid'}
-                      onClick={async () => {
-                        preTopUp('wx');
-                      }}
-                    >
-                      微信
                     </Button>
                   </Space>
                 </Form>
